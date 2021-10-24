@@ -8,6 +8,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ButtonHandler implements FileInterface {
@@ -21,19 +22,34 @@ public class ButtonHandler implements FileInterface {
         return null;
     }
 
-    public void AddButton(ListView<String> todoListView, TextField listTextField)
+    public Item AddItemButton(ListView<String> todoItemView, TextField listTextField)
     {
-        String name = listTextField.getCharacters().toString();
-        todoListView.getItems().add(name);
+        /*String name = listTextField.getCharacters().toString();
+        todoItemView.getItems().add(name);
+        return new Item(name);*/
+        return null;
     }
 
-    public String Rename(String currentName)
+    public ToDoList AddListButton(ListView<String> todoListView, TextField listTextField)
     {
+        /*String name = listTextField.getCharacters().toString();
+        todoListView.getItems().add(name);
+        return new ToDoList();*/
         return null;
+    }
+
+    public void Rename(String currentName, int index, List<Item> items)
+    {
+        //items.get(index).setName(currentName);
+    }
+
+    public String Rename(String newName)
+    {
+        return newName;
     }
 
     public void HomeButton()
     {
-
+        // Load ListView.fxml using stage
     }
 }

@@ -7,6 +7,13 @@ public class Item {
     private LocalDate date;
     private boolean complete;
 
+    public Item(String name)
+    {
+        this.setName(name);
+        this.setDate(date.getChronology().dateNow());
+        this.setComplete(false);
+    }
+
     public String getName()
     {
         return name;

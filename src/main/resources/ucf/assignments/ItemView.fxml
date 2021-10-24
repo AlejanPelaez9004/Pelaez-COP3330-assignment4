@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -55,7 +54,7 @@
     <center>
         <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: darkgrey;" BorderPane.alignment="CENTER">
             <center>
-                <ListView fx:id="todoItemView" style=".list-cell{-fx-font}: 14pt;" BorderPane.alignment="CENTER">
+                <ListView fx:id="todoItemView" onMouseClicked="#onItemListClicked" style=".list-cell{-fx-font}: 14pt;" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets bottom="20.0" left="50.0" right="50.0" top="5.0" />
                     </BorderPane.margin>
@@ -73,11 +72,11 @@
                      <font>
                         <Font size="14.0" />
                      </font></TextField>
-                  <MenuButton fx:id="sortByDropdown" alignment="TOP_RIGHT" layoutX="790.0" layoutY="10.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="88.0" text="Sort by">
+                  <MenuButton fx:id="displayDropdown" alignment="TOP_RIGHT" layoutX="790.0" layoutY="10.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="88.0" text="Display">
                     <items>
-                        <CheckMenuItem fx:id="allOption" mnemonicParsing="false" onAction="#onAllOptionSelected" text="All" />
-                        <CheckMenuItem fx:id="incompleteOption" mnemonicParsing="false" onAction="#onIncompleteOptionSelected" text="Incomplete" />
-                        <CheckMenuItem fx:id="completeOption" mnemonicParsing="false" onAction="#onCompleteOptionSelected" text="Complete" />
+                        <MenuItem fx:id="allOption" mnemonicParsing="false" onAction="#onAllOptionSelected" text="All" />
+                        <MenuItem fx:id="incompleteOption" mnemonicParsing="false" onAction="#onIncompleteOptionSelected" text="Incomplete" />
+                        <MenuItem fx:id="completeOption" mnemonicParsing="false" onAction="#onCompleteOptionSelected" text="Complete" />
                     </items>
                      <font>
                         <Font size="14.0" />

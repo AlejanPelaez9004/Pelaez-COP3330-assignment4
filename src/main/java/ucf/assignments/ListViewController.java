@@ -34,11 +34,12 @@ public class ListViewController {
         @FXML
         private ListView<String> todoListView;
 
+        private ButtonHandler bh;
+        private ToDoApplication app;
         @FXML
         void onAddButtonPressed(ActionEvent event) {
-                ButtonHandler bh = new ButtonHandler();
-                bh.AddButton(todoListView, listTextField);
-                listTextField.clear();
+                /*app.setCurrentList(bh.AddListButton(todoListView, listTextField));
+                listTextField.clear();*/
         }
 
         @FXML
@@ -51,6 +52,7 @@ public class ListViewController {
                                         String selectedItem = todoListView.getSelectionModel().getSelectedItem();
                                         System.out.println(selectedItem);
 
+                                        app.setCurrentList(ListWithSelectedItemName);
                                         stage.Load("ItemView.fxml");
                                 }
                         }
@@ -64,7 +66,7 @@ public class ListViewController {
 
         @FXML
         void onRenameButtonPressed(ActionEvent event) {
-                //ButtonHandler.Rename(todoListView.getSelectionModel().getSelectedItem());
+                //todoListView.getSelectionModel().getSelectedItem() = ButtonHandler.Rename(listTextField.getValue());
         }
 
         @FXML

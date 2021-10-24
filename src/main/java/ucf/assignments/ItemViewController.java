@@ -16,16 +16,18 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.util.List;
+
 public class ItemViewController {
 
     @FXML
     private Button addButton;
     @FXML
-    private CheckMenuItem allOption;
+    private MenuItem allOption;
     @FXML
     private CheckBox completeCheckbox;
     @FXML
-    private CheckMenuItem completeOption;
+    private MenuItem completeOption;
     @FXML
     private DatePicker datePicker;
     @FXML
@@ -33,7 +35,7 @@ public class ItemViewController {
     @FXML
     private Button homeButton;
     @FXML
-    private CheckMenuItem incompleteOption;
+    private MenuItem incompleteOption;
     @FXML
     private TextField itemTextField;
     @FXML
@@ -43,26 +45,29 @@ public class ItemViewController {
     @FXML
     private MenuItem saveMenuOption;
     @FXML
-    private MenuButton sortByDropdown;
+    private MenuButton displayDropdown;
     @FXML
     private ListView<String> todoItemView;
 
     @FXML
     void onAddButtonPressed(ActionEvent event) {
-        //ButtonHandler.AddButton(todoListView, itemTextField);
+        //items.add(ButtonHandler.AddItemButton(todoItemView, itemTextField));
     }
 
     @FXML
     void onItemListClicked(MouseEvent event) {
-                /*todoListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                /*todoItemView.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override
                         public void handle(MouseEvent event) {
                                 if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2)
                                 {
-                                        String selectedItem = todoListView.getSelectionModel().getSelectedItem();
+                                        String selectedItem = todoItemView.getSelectionModel().getSelectedItem();
                                         System.out.println(selectedItem);
 
-                                        stage.Load("ListView.fxml");
+                                        Item selectedItem = items.get(todoItemView.getSelectionModel().getSelectedIndex();
+                                        completeCheckbox.setSelected(selectedItem).getCompleteStatus());
+                                        datePicker.setDate(selectedItem.getDate());
+                                        itemTextField.set(selectedItem.getName());
                                 }
                         }
                 });*/
@@ -70,22 +75,22 @@ public class ItemViewController {
 
     @FXML
     void onCompleteCheckbox(ActionEvent event) {
-
+        //items.get(todoItemView.getSelectionModel().getSelectedIndex()).setComplete(completeCheckbox.IsSelected());
     }
 
     @FXML
     void onAllOptionSelected(ActionEvent event) {
-
+        // Use DisplayCompleteManager.ShowAll();
     }
 
     @FXML
     void onIncompleteOptionSelected(ActionEvent event) {
-
+        // Use DisplayCompleteManager.ShowIncompleteItems();
     }
 
     @FXML
     void onCompleteOptionSelected(ActionEvent event) {
-
+        // Use DisplayCompleteManager.ShowCompletedItems();
     }
 
     @FXML
@@ -106,12 +111,12 @@ public class ItemViewController {
 
     @FXML
     void onRenameButtonPressed(ActionEvent event) {
-        //ButtonHandler.Rename(todoListView.getSelectionModel().getSelectedItem());
+        //ButtonHandler.Rename(todoItemView.getSelectionModel().getSelectedItem(), todoItemView.getSelectionModel().getSelectedIndex(), items);
     }
 
     @FXML
     void onSavePressed(ActionEvent event) {
-        //ButtonHandler.Save(todoListView);
+        //ButtonHandler.Save(todoItemView);
     }
 
 }
