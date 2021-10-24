@@ -6,17 +6,8 @@ package ucf.assignments;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-
-import java.util.List;
 
 public class ItemViewController {
 
@@ -32,6 +23,8 @@ public class ItemViewController {
     private DatePicker datePicker;
     @FXML
     private MenuButton fileButton;
+    @FXML
+    private MenuItem deleteSelected;
     @FXML
     private Button homeButton;
     @FXML
@@ -56,21 +49,21 @@ public class ItemViewController {
 
     @FXML
     void onItemListClicked(MouseEvent event) {
-                /*todoItemView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent event) {
-                                if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2)
-                                {
-                                        String selectedItem = todoItemView.getSelectionModel().getSelectedItem();
-                                        System.out.println(selectedItem);
+        /*todoItemView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                        if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2)
+                        {
+                                String selectedItem = todoItemView.getSelectionModel().getSelectedItem();
+                                System.out.println(selectedItem);
 
-                                        Item selectedItem = items.get(todoItemView.getSelectionModel().getSelectedIndex();
-                                        completeCheckbox.setSelected(selectedItem).getCompleteStatus());
-                                        datePicker.setDate(selectedItem.getDate());
-                                        itemTextField.set(selectedItem.getName());
-                                }
+                                Item selectedItem = items.get(todoItemView.getSelectionModel().getSelectedIndex();
+                                completeCheckbox.setSelected(selectedItem).getCompleteStatus());
+                                datePicker.setDate(selectedItem.getDate());
+                                itemTextField.set(selectedItem.getName());
                         }
-                });*/
+                }
+        });*/
     }
 
     @FXML
@@ -97,6 +90,13 @@ public class ItemViewController {
     void onDatePickerAction(ActionEvent event) {
         //Item item = new Item();
         //item.setDate(datePicker.getValue());
+    }
+
+    @FXML
+    void onDeleteSelectedPressed(ActionEvent event) {
+        //int index = todoListView.getSelectionModel().getSelectedIndex();
+        //todoListView.getSelectionModel().getSelectedIndices().remove(index);
+        // delete item class
     }
 
     @FXML

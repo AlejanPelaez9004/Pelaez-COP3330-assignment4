@@ -8,7 +8,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ButtonHandler implements FileInterface {
@@ -38,7 +37,7 @@ public class ButtonHandler implements FileInterface {
         return null;
     }
 
-    public void Rename(String currentName, int index, List<Item> items)
+    public void RenameItem(String currentName, int index, List<Item> items)
     {
         //items.get(index).setName(currentName);
     }

@@ -25,6 +25,7 @@ class ItemViewController {
     private DatePicker datePicker;
     private MenuButton fileButton;
     private Button homeButton;
+    private MenuItem deleteSelected;
     private MenuItem incompleteOption;
     private TextField itemTextField;
     private MenuItem loadMenuOption;
@@ -38,6 +39,7 @@ class ItemViewController {
     void onAllOptionSelected(ActionEvent event)
     void onIncompleteOptionSelected(ActionEvent event)
     void onCompleteOptionSelected(ActionEvent event)
+    void onDeleteSelectedPressed(ActionEvent event)
     void onDatePickerAction(ActionEvent event)
     void onHomeButtonPressed(ActionEvent event)
     void onLoadPressed(ActionEvent event)
@@ -105,7 +107,7 @@ class ButtonHandler
     public List<String> Load(File file)
     public Item AddItemButton(ListView<String> todoItemView, TextField listTextField)
     public ToDoList AddListButton(ListView<String> todoListView, TextField listTextField)
-    public void Rename(String currentName, int index, List<Item> items)
+    public void RenameItem(String currentName, int index, List<Item> items)
     public String Rename(String newName)
     public void HomeButton()
 }
