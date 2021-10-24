@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solution
+ *  Copyright 2021 Alejandro Pelaez
+ */
 package ucf.assignments;
 
 import javafx.application.Application;
@@ -7,12 +11,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class ToDoApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(ToDoApplication.class.getResource("ListView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("To-do List Manager");
         stage.setScene(scene);
         stage.show();
     }
