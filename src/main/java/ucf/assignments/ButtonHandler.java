@@ -13,7 +13,11 @@ import java.util.List;
 public class ButtonHandler implements FileInterface {
     @Override
     public void Save(List<String> list) {
-
+        // open file chooser to user to save file
+        // create FileWriter and write using for loop
+        // for i<list.size()
+        //      write name of list + /n
+        //      write items name, due date, complete + /n
     }
 
     @Override
